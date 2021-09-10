@@ -6,52 +6,72 @@ namespace Objective_4._3
     {
         static void Main(string[] args)
         {
-            int k = 0;
-            while(true)
+            Console.WriteLine("Цикл for");
+
+            for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+                Console.WriteLine(i);
+
+                ShowColor();
+            }
+
+            Console.WriteLine("Цикл while");
+            int k = 0;
+            while (k < 3)
+            {
                 Console.WriteLine(k);
 
-                var text = Console.ReadLine();
-
-                if (text == "stop")
-                {
-                    Console.WriteLine("Цикл остановлен");
-                    break;
-                }
-
-                switch (text)
-                {
-                    case "red":
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is red!");
-                        break;
-
-                    case "green":
-                        Console.BackgroundColor = ConsoleColor.Green;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is green!");
-                        break;
-
-                    case "cyan":
-                        Console.BackgroundColor = ConsoleColor.Cyan;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is cyan!");
-                        break;
-
-                    default:
-                        Console.BackgroundColor = ConsoleColor.Yellow;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is yellow!");
-                        break;
-                }
-                k++;
+                ShowColor();
             }
+
+            Console.WriteLine("Цикл do");
+            int t = 0;
+
+            do
+            {
+                Console.WriteLine(t);
+
+                ShowColor();
+
+            } while (t < 3);
+
+            Console.ReadKey();
+        }
+        static string ShowColor()
+        {
+            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+            var color = Console.ReadLine();
+
+            switch (color)
+            {
+                case "red":
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is red!");
+                    break;
+
+                case "green":
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is green!");
+                    break;
+                case "cyan":
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is cyan!");
+                    break;
+                default:
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    Console.WriteLine("Your color is yellow!");
+                    break;
+            }
+
+            return color;
         }
     }
 }
