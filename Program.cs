@@ -7,33 +7,38 @@ namespace Objective_4._3
         static void Main(string[] args)
         {
             Console.WriteLine("Цикл for");
+            string[] favcolors = new string[3];
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < favcolors.Length; i++)
             {
-                Console.WriteLine(i);
-
-                ShowColor();
+                favcolors[i] = ShowColor();
+            }
+            Console.WriteLine("Ваши любимые цвета: ");
+            foreach (var color in favcolors)
+            {
+                Console.WriteLine(color);
             }
 
-            Console.WriteLine("Цикл while");
-            int k = 0;
-            while (k < 3)
-            {
-                Console.WriteLine(k);
 
-                ShowColor();
-            }
+            //Console.WriteLine("Цикл while");
+            //int k = 0;
+            //while (k < 3)
+            //{
+            //    Console.WriteLine(k);
 
-            Console.WriteLine("Цикл do");
-            int t = 0;
+            //    ShowColor();
+            //}
 
-            do
-            {
-                Console.WriteLine(t);
+            //Console.WriteLine("Цикл do");
+            //int t = 0;
 
-                ShowColor();
+            //do
+            //{
+            //    Console.WriteLine(t);
 
-            } while (t < 3);
+            //    ShowColor();
+
+            //} while (t < 3);
 
             Console.ReadKey();
         }
